@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  bioTech
 //
-//  Created by Naeyma Ahmed on 9/14/22.
+//  Created by Michael Smith on 9/14/22.
 //
 
 import SwiftUI
