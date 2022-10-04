@@ -22,38 +22,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getOrientation();
+        getOrientation()
+        askPermission()
         // Do any additional setup after loading the view.
-        
-        // Notifications:
-        // Step 1: Ask for permission
-        let center = UNUserNotificationCenter.current()
-        
-        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-        }
-        
-        // Step 2: Create the notification content
-        let content = UNMutableNotificationContent()
-        content.title = "Time for your daily measurements!"
-        content.body = "Please open the APT BioSensor app for your daily pelvic tilt and pain measurements"
-        
-        // Step 3: Create the notification trigger
-        let date = Date().addingTimeInterval(5) // adds a time interval of 10 seconds to date
-        
-        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        
-        // Step 4: Create the request
-        let uuidString = UUID().uuidString
-        
-        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
-        
-        // Step 5: Register the request
-        center.add(request) { (error) in
-            // Check the error parameter and handle any errors
-        }
     }
+    
     func getOrientation() {
         
         motion.deviceMotionUpdateInterval = 1
@@ -67,11 +40,44 @@ class ViewController: UIViewController {
         }
     }
     
+    func askPermission() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            if success {
+                print("Access Granted!")
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func sendNotification(date: Date, type: String, timeInterval: Double = 10, title: String, body: String) {
+        var trigger: UNNotificationTrigger?
+        
+        // Create a trigger
+        if type == "date" {
+            let dateComponents = Calendar.current.dateComponents([.month, .day, .year, .hour, .minute], from: date)
+            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        } else if type == "time" {
+            trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+        }
+        
+        // Cutomize the content
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = UNNotificationSound.default
+        
+        // Create the request
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request)
+    }
+    
     @IBAction func saveButton(_ sender: Any) {
         UserDefaults.standard.set(self.roll.text, forKey: "rollValue")
         UserDefaults.standard.set(self.pitch.text, forKey: "pitchValue")
         UserDefaults.standard.set(self.yaw.text, forKey: "yawValue")
     }
+    
     @IBAction func loadSaveData(_ sender: Any) {
         rollTextView.text = UserDefaults.standard.object(forKey: "rollValue") as? String
         pitchTextView.text = UserDefaults.standard.object(forKey: "pitchValue") as? String
