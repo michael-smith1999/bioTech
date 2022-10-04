@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var yaw: UILabel!
     
     var motion = CMMotionManager()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getOrientation()
@@ -82,6 +82,11 @@ class ViewController: UIViewController {
         rollTextView.text = UserDefaults.standard.object(forKey: "rollValue") as? String
         pitchTextView.text = UserDefaults.standard.object(forKey: "pitchValue") as? String
         yawTextView.text = UserDefaults.standard.object(forKey: "yawValue") as? String
+    }
+    
+    @IBAction func notificationPreferences(_ sender: Any) {
+        // this would go in the settings tab where notification preferences can be set
+        // notification preferences would include setting the time for daily measurement notifications to be sent out
     }
 }
 
