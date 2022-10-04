@@ -2,7 +2,7 @@
 //  ViewController_Settings.swift
 //  APT BioSensor
 //
-//  Created by Naeyma Ahmed on 10/4/22.
+//  Created by Michael Smith on 10/4/22.
 //
 
 import UIKit
