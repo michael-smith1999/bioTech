@@ -16,6 +16,8 @@
 		07CAF43728D51D3700DD23C0 /* APT_BioSensorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CAF43628D51D3700DD23C0 /* APT_BioSensorTests.swift */; };
 		07CAF44128D51D3800DD23C0 /* APT_BioSensorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CAF44028D51D3800DD23C0 /* APT_BioSensorUITests.swift */; };
 		07CAF44328D51D3800DD23C0 /* APT_BioSensorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CAF44228D51D3800DD23C0 /* APT_BioSensorUITestsLaunchTests.swift */; };
+		D166AA4728ECBEC800B6B664 /* ViewController_Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = D166AA4628ECBEC800B6B664 /* ViewController_Display.swift */; };
+		D166AA4928ECC3AD00B6B664 /* ViewController_Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D166AA4828ECC3AD00B6B664 /* ViewController_Settings.swift */; };
 		D1B46FC928D2775100C75C27 /* bioTechApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B46FC828D2775100C75C27 /* bioTechApp.swift */; };
 		D1B46FCB28D2775100C75C27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B46FCA28D2775100C75C27 /* ContentView.swift */; };
 		D1B46FCD28D2775100C75C27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1B46FCC28D2775100C75C27 /* Assets.xcassets */; };
@@ -53,6 +55,8 @@
 		07CAF43C28D51D3700DD23C0 /* APT BioSensorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "APT BioSensorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CAF44028D51D3800DD23C0 /* APT_BioSensorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APT_BioSensorUITests.swift; sourceTree = "<group>"; };
 		07CAF44228D51D3800DD23C0 /* APT_BioSensorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APT_BioSensorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D166AA4628ECBEC800B6B664 /* ViewController_Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Display.swift; sourceTree = "<group>"; };
+		D166AA4828ECC3AD00B6B664 /* ViewController_Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Settings.swift; sourceTree = "<group>"; };
 		D1B46FC528D2775100C75C27 /* bioTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bioTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B46FC828D2775100C75C27 /* bioTechApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bioTechApp.swift; sourceTree = "<group>"; };
 		D1B46FCA28D2775100C75C27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 				07CAF41F28D51D3500DD23C0 /* AppDelegate.swift */,
 				07CAF42128D51D3500DD23C0 /* SceneDelegate.swift */,
 				07CAF42328D51D3500DD23C0 /* ViewController.swift */,
+				D166AA4628ECBEC800B6B664 /* ViewController_Display.swift */,
+				D166AA4828ECC3AD00B6B664 /* ViewController_Settings.swift */,
 				07CAF42528D51D3500DD23C0 /* Main.storyboard */,
 				07CAF42828D51D3700DD23C0 /* Assets.xcassets */,
 				07CAF42A28D51D3700DD23C0 /* LaunchScreen.storyboard */,
@@ -327,7 +333,9 @@
 			files = (
 				07CAF42428D51D3500DD23C0 /* ViewController.swift in Sources */,
 				07CAF42028D51D3500DD23C0 /* AppDelegate.swift in Sources */,
+				D166AA4928ECC3AD00B6B664 /* ViewController_Settings.swift in Sources */,
 				07CAF42228D51D3500DD23C0 /* SceneDelegate.swift in Sources */,
+				D166AA4728ECBEC800B6B664 /* ViewController_Display.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,7 +409,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5ZGKN7XWK5;
+				DEVELOPMENT_TEAM = AT3WB82WXJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "APT BioSensor/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -415,7 +423,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "brodriguez.APT-BioSensor";
+				PRODUCT_BUNDLE_IDENTIFIER = "smithMichael.APT-BioSensor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -436,7 +444,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5ZGKN7XWK5;
+				DEVELOPMENT_TEAM = AT3WB82WXJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "APT BioSensor/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -450,7 +458,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "brodriguez.APT-BioSensor";
+				PRODUCT_BUNDLE_IDENTIFIER = "smithMichael.APT-BioSensor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
