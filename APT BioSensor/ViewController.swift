@@ -50,14 +50,5 @@ class ViewController: UIViewController {
         pitchTextView.text = UserDefaults.standard.object(forKey: "pitchValue") as? String
         yawTextView.text = UserDefaults.standard.object(forKey: "yawValue") as? String
     }
-    
-    @IBAction func notificationPreferences(_ sender: Any) {
-        // this should go in the settings tab where notification preferences can be set
-        NotificationManager.shared.requestAuthorization { granted in
-            if granted {
-                showNotificationSettingsUI = true;
-            }
-        }
-    }
 }
 

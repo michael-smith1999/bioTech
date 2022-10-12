@@ -91,15 +91,6 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Measure"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7s7-mf-rIw">
-                                <rect key="frame" x="274" y="779" width="100" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Settings"/>
-                                <connections>
-                                    <segue destination="P7q-fS-AUJ" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="KpK-af-VIh"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yl1-Mr-eC5">
                                 <rect key="frame" x="145" y="779" width="100" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -109,6 +100,27 @@
                                     <segue destination="Acx-GX-Wel" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="ZMh-6s-hXh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7s7-mf-rIw">
+                                <rect key="frame" x="274" y="779" width="100" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Settings"/>
+                                <connections>
+                                    <segue destination="P7q-fS-AUJ" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="KpK-af-VIh"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="gear.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3qr-OI-mye">
+                                <rect key="frame" x="303" y="740" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="tray.full" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hru-oH-nDT">
+                                <rect key="frame" x="174" y="742" width="42" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="ruler" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="q8E-GA-Hny">
+                                <rect key="frame" x="39" y="745" width="42" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -162,6 +174,12 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="P7a-ix-YbI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsY-MG-RcU">
+                                <rect key="frame" x="145" y="779" width="100" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Data"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reu-4G-MVF">
                                 <rect key="frame" x="274" y="778" width="100" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -171,12 +189,18 @@
                                     <segue destination="P7q-fS-AUJ" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="Gfk-fh-8QP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsY-MG-RcU">
-                                <rect key="frame" x="145" y="779" width="100" height="31"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="ruler" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ihA-uv-TTe">
+                                <rect key="frame" x="39" y="747" width="42" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Data"/>
-                            </button>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="tray.full" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VEX-6V-Ir1">
+                                <rect key="frame" x="174" y="744" width="42" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="gear.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dAj-uR-fim">
+                                <rect key="frame" x="303" y="742" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hpq-y2-weS"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -202,26 +226,6 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="LWc-6N-nk3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ND9-vk-9pl">
-                                <rect key="frame" x="274" y="779" width="100" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Settings"/>
-                            </button>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Notification Settings" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uAI-dz-XCt">
-                                <rect key="frame" x="115" y="360" width="160" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="NotificationSettingsButton">
-                                    <accessibilityTraits key="traits" button="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="About" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xEw-oh-6Cp">
-                                <rect key="frame" x="115" y="421" width="160" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8F-0d-phC" userLabel="Button 2">
                                 <rect key="frame" x="145" y="779" width="100" height="31"/>
                                 <state key="normal" title="Button"/>
@@ -230,6 +234,38 @@
                                     <segue destination="Acx-GX-Wel" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="ZfP-QX-vHY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ND9-vk-9pl">
+                                <rect key="frame" x="274" y="779" width="100" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Settings"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybb-3g-aJV">
+                                <rect key="frame" x="95" y="407" width="200" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="About"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Evm-XG-2xW">
+                                <rect key="frame" x="95" y="339" width="200" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Notification Settings"/>
+                                <connections>
+                                    <action selector="notificationSettingsButton:" destination="P7q-fS-AUJ" eventType="touchUpInside" id="o0x-0t-uHV"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="gear.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="B2i-J2-gg8">
+                                <rect key="frame" x="303" y="742" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="ruler" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DNq-Hy-cG4">
+                                <rect key="frame" x="45" y="747" width="42" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="tray.full" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="acI-zs-Wkw">
+                                <rect key="frame" x="174" y="744" width="42" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OkI-br-Ll4"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -249,11 +285,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KpK-af-VIh"/>
+        <segue reference="Gfk-fh-8QP"/>
         <segue reference="ZfP-QX-vHY"/>
         <segue reference="LWc-6N-nk3"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="gear.badge.questionmark" catalog="system" width="128" height="111"/>
+        <image name="ruler" catalog="system" width="128" height="57"/>
+        <image name="tray.full" catalog="system" width="128" height="88"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
