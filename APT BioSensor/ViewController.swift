@@ -22,7 +22,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getOrientation()
-        //requestAuthorization()
+        requestNotificationPermission()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -36,6 +37,18 @@ class ViewController: UIViewController {
                 self.pitch.text = "\(trueData.attitude.pitch)"
             }
             
+        }
+    }
+    
+    func requestNotificationPermission() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+            if granted {
+                print("Notifications authorized")
+            }
+            if let error = error {
+                print(error.localizedDescription)
+            }
         }
     }
     

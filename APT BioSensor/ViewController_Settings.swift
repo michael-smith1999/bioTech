@@ -18,11 +18,14 @@ class ViewController_Settings: UIViewController {
     }
     
     @IBAction func notificationSettingsButton(_ sender: Any) {
-        NotificationManager.shared.requestAuthorization { granted in
-            if granted {
-                self.showNotificationSettingsUI = true
-            }
-        }
+        print("'Notification Settings' button was pressed")
+        NotificationManager.shared.fetchNotificationSettings()
+        showNotificationSettingsUI = true
+    }
+    
+    @IBAction func aboutButton(_ sender: Any) {
+        // info about the app and dev team are displayed after clicking this button
+        print("'About' button was pressed")
     }
     
     /*

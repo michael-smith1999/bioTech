@@ -12,14 +12,6 @@ class NotificationManager: ObservableObject {
     static let shared = NotificationManager()
     @Published var settings: UNNotificationSettings?
     
-    func requestAuthorization(completion: @escaping (Bool) -> Void) {
-        UNUserNotificationCenter.current()
-            .requestAuthorization(options: [.alert, .badge, .sound]) { granted, _ in
-            self.fetchNotificationSettings()
-            completion(granted)
-        }
-    }
-    
     func fetchNotificationSettings() {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             DispatchQueue.main.async {

@@ -240,13 +240,16 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Settings"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybb-3g-aJV">
-                                <rect key="frame" x="95" y="407" width="200" height="31"/>
+                                <rect key="frame" x="95" y="663" width="200" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="About"/>
+                                <connections>
+                                    <action selector="aboutButton:" destination="P7q-fS-AUJ" eventType="touchUpInside" id="AmO-3o-Scp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Evm-XG-2xW">
-                                <rect key="frame" x="95" y="339" width="200" height="31"/>
+                                <rect key="frame" x="95" y="600" width="200" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Notification Settings"/>
@@ -254,6 +257,10 @@
                                     <action selector="notificationSettingsButton:" destination="P7q-fS-AUJ" eventType="touchUpInside" id="o0x-0t-uHV"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="tray.full" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="acI-zs-Wkw">
+                                <rect key="frame" x="174" y="744" width="42" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="gear.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="B2i-J2-gg8">
                                 <rect key="frame" x="303" y="742" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -262,10 +269,10 @@
                                 <rect key="frame" x="45" y="747" width="42" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="tray.full" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="acI-zs-Wkw">
-                                <rect key="frame" x="174" y="744" width="42" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="X4I-l3-J1i">
+                                <rect key="frame" x="30" y="357" width="330" height="130"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OkI-br-Ll4"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -285,8 +292,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Gfk-fh-8QP"/>
-        <segue reference="ZfP-QX-vHY"/>
+        <segue reference="KpK-af-VIh"/>
+        <segue reference="ZMh-6s-hXh"/>
         <segue reference="LWc-6N-nk3"/>
     </inferredMetricsTieBreakers>
     <resources>
