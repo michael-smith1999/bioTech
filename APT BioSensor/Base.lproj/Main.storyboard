@@ -194,18 +194,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8F-0d-phC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8F-0d-phC">
                                 <rect key="frame" x="156" y="779" width="80" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Botton 2"/>
                                 <connections>
                                     <segue destination="Acx-GX-Wel" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="ZfP-QX-vHY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ND9-vk-9pl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ND9-vk-9pl">
                                 <rect key="frame" x="301" y="779" width="80" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button 3"/>
                             </button>
@@ -215,9 +213,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uND-9H-VFm">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uND-9H-VFm">
                                 <rect key="frame" x="16" y="779" width="78" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button 1"/>
                                 <connections>
@@ -227,6 +224,14 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OkI-br-Ll4"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="uND-9H-VFm" firstAttribute="baseline" secondItem="ND9-vk-9pl" secondAttribute="baseline" id="Cyk-3K-EFX"/>
+                            <constraint firstItem="i8F-0d-phC" firstAttribute="leading" secondItem="uND-9H-VFm" secondAttribute="trailing" constant="62" id="J00-hb-QEf"/>
+                            <constraint firstItem="uND-9H-VFm" firstAttribute="baseline" secondItem="i8F-0d-phC" secondAttribute="baseline" id="OYu-52-cff"/>
+                            <constraint firstItem="uND-9H-VFm" firstAttribute="bottom" secondItem="OkI-br-Ll4" secondAttribute="bottom" id="QdV-A5-xlq"/>
+                            <constraint firstItem="uND-9H-VFm" firstAttribute="leading" secondItem="aR2-re-DHE" secondAttribute="leadingMargin" id="q4m-3z-Yz8"/>
+                            <constraint firstItem="ND9-vk-9pl" firstAttribute="leading" secondItem="i8F-0d-phC" secondAttribute="trailing" constant="65" id="r90-4y-ISG"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMW-O9-VPX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -236,7 +241,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="KpK-af-VIh"/>
-        <segue reference="ZMh-6s-hXh"/>
+        <segue reference="ZfP-QX-vHY"/>
         <segue reference="LWc-6N-nk3"/>
     </inferredMetricsTieBreakers>
     <resources>

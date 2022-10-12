@@ -7,7 +7,6 @@
 
 import UIKit
 import CoreMotion
-import UserNotifications
 
 class ViewController: UIViewController {
     
@@ -23,7 +22,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getOrientation()
-        askPermission()
+        requestAuthorization()
         // Do any additional setup after loading the view.
     }
     
@@ -38,38 +37,6 @@ class ViewController: UIViewController {
             }
             
         }
-    }
-    
-    func askPermission() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-            if success {
-                print("Access Granted!")
-            } else if let error = error {
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
-    func sendNotification(date: Date, type: String, timeInterval: Double = 10, title: String, body: String) {
-        var trigger: UNNotificationTrigger?
-        
-        // Create a trigger
-        if type == "date" {
-            let dateComponents = Calendar.current.dateComponents([.month, .day, .year, .hour, .minute], from: date)
-            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        } else if type == "time" {
-            trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
-        }
-        
-        // Cutomize the content
-        let content = UNMutableNotificationContent()
-        content.title = title
-        content.body = body
-        content.sound = UNNotificationSound.default
-        
-        // Create the request
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request)
     }
     
     @IBAction func saveButton(_ sender: Any) {
