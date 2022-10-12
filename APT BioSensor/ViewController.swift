@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getOrientation()
-        requestAuthorization()
+        //requestAuthorization()
         // Do any additional setup after loading the view.
     }
     
@@ -52,8 +52,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func notificationPreferences(_ sender: Any) {
-        // this would go in the settings tab where notification preferences can be set
-        // notification preferences would include setting the time for daily measurement notifications to be sent out
+        // this should go in the settings tab where notification preferences can be set
+        NotificationManager.shared.requestAuthorization { granted in
+            if granted {
+                showNotificationSettingsUI = true;
+            }
+        }
     }
 }
 

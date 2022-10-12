@@ -85,28 +85,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yl1-Mr-eC5">
-                                <rect key="frame" x="156" y="779" width="80" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button 2"/>
-                                <connections>
-                                    <segue destination="Acx-GX-Wel" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="ZMh-6s-hXh"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4U-zY-gDy">
-                                <rect key="frame" x="11" y="779" width="78" height="31"/>
+                                <rect key="frame" x="10" y="779" width="100" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button 1"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Measure"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7s7-mf-rIw">
-                                <rect key="frame" x="294" y="779" width="80" height="31"/>
+                                <rect key="frame" x="274" y="779" width="100" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button 3"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Settings"/>
                                 <connections>
                                     <segue destination="P7q-fS-AUJ" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="KpK-af-VIh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yl1-Mr-eC5">
+                                <rect key="frame" x="145" y="779" width="100" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Data"/>
+                                <connections>
+                                    <segue destination="Acx-GX-Wel" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="ZMh-6s-hXh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -137,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-845" y="25"/>
+            <point key="canvasLocation" x="-846.15384615384608" y="24.881516587677723"/>
         </scene>
         <!--View Controller Display-->
         <scene sceneID="1ch-Br-osf">
@@ -154,28 +154,28 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rlg-JZ-JTy">
-                                <rect key="frame" x="11" y="779" width="78" height="31"/>
+                                <rect key="frame" x="10" y="779" width="100" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button 1"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Measure"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="P7a-ix-YbI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsY-MG-RcU">
-                                <rect key="frame" x="156" y="779" width="80" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button 2"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reu-4G-MVF">
-                                <rect key="frame" x="301" y="779" width="80" height="31"/>
+                                <rect key="frame" x="274" y="778" width="100" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button 3"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Settings"/>
                                 <connections>
                                     <segue destination="P7q-fS-AUJ" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="Gfk-fh-8QP"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsY-MG-RcU">
+                                <rect key="frame" x="145" y="779" width="100" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Data"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hpq-y2-weS"/>
@@ -184,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SVV-Fi-Fje" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45" y="26"/>
+            <point key="canvasLocation" x="44.615384615384613" y="25.592417061611375"/>
         </scene>
         <!--View Controller Settings-->
         <scene sceneID="PqA-uR-F8U">
@@ -194,31 +194,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8F-0d-phC">
-                                <rect key="frame" x="156" y="779" width="80" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uND-9H-VFm">
+                                <rect key="frame" x="16" y="779" width="100" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Botton 2"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Measure"/>
                                 <connections>
-                                    <segue destination="Acx-GX-Wel" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="ZfP-QX-vHY"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="LWc-6N-nk3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ND9-vk-9pl">
-                                <rect key="frame" x="301" y="779" width="80" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ND9-vk-9pl">
+                                <rect key="frame" x="274" y="779" width="100" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button 3"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Settings"/>
                             </button>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Settings" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uAI-dz-XCt">
-                                <rect key="frame" x="160" y="79" width="70" height="34"/>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Notification Settings" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uAI-dz-XCt">
+                                <rect key="frame" x="115" y="360" width="160" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="NotificationSettingsButton">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="About" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xEw-oh-6Cp">
+                                <rect key="frame" x="115" y="421" width="160" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uND-9H-VFm">
-                                <rect key="frame" x="16" y="779" width="78" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8F-0d-phC" userLabel="Button 2">
+                                <rect key="frame" x="145" y="779" width="100" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button 1"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Data"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="LWc-6N-nk3"/>
+                                    <segue destination="Acx-GX-Wel" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="ZfP-QX-vHY"/>
                                 </connections>
                             </button>
                         </subviews>
