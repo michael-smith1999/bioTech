@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     var rollDeg:Double = 0
     var yawDeg:Double = 0
     var pitchDeg:Double = 0
+    var isAPT:Bool = false
     
     var motion = CMMotionManager()
     
@@ -49,6 +50,16 @@ class ViewController: UIViewController {
             
         }
     }
+    
+    //determine if user has apt and by how much
+    /*func compareAngles() -> (Bool, Double){
+        if(){
+            isAPT = true
+        }else{
+            isAPT = false
+        }
+        return (isAPT, )
+    }*/
     
     func requestNotificationPermission() {
         let center = UNUserNotificationCenter.current()
