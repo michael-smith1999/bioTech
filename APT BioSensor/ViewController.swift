@@ -8,6 +8,11 @@
 import UIKit
 import CoreMotion
 
+var tempString = ""
+var rollValues = ["Roll"]
+var pitchValues = ["Pitch"]
+var yawValues = ["Yaw"]
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var roll: UILabel!
@@ -16,6 +21,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var pitchTextView: UITextView!
     @IBOutlet weak var yawTextView: UITextView!
     @IBOutlet weak var yaw: UILabel!
+    var saveCount = 1
+    
     
     var motion = CMMotionManager()
     
@@ -25,6 +32,10 @@ class ViewController: UIViewController {
         requestNotificationPermission()
         
         // Do any additional setup after loading the view.
+        // need to figure way to reset count and arrays when date switches
+        let df = DateFormatter()
+        df.dateFormat = "dd/MM/yyyy"
+        let curDate = Date()
     }
     
     func getOrientation() {
@@ -53,15 +64,35 @@ class ViewController: UIViewController {
     }
     
     @IBAction func saveButton(_ sender: Any) {
-        UserDefaults.standard.set(self.roll.text, forKey: "rollValue")
-        UserDefaults.standard.set(self.pitch.text, forKey: "pitchValue")
-        UserDefaults.standard.set(self.yaw.text, forKey: "yawValue")
+        let df = DateFormatter()
+        df.dateFormat = "dd/MM/yyyy"
+        let tempDate = Date()
+        let str = df.string(from: Date())
+        print(str)
+        UserDefaults.standard.setValue(str, forKey: str)
+        
+        rollValues.append(self.roll.text ?? "yoyo")
+        pitchValues.append(self.pitch.text ?? "yoyo")
+        yawValues.append(self.yaw.text ?? "yoyo")
+        print(rollValues.count)
+        
+        UserDefaults.standard.set(rollValues, forKey: str + "rollValue")
+        UserDefaults.standard.set(pitchValues, forKey: str + "pitchValue")
+        UserDefaults.standard.set(yawValues, forKey: str + "yawValue")
+        tempString = str
+        saveCount += 1
+        print(saveCount)
+        print(str)
+
+        
+
     }
     
     @IBAction func loadSaveData(_ sender: Any) {
-        rollTextView.text = UserDefaults.standard.object(forKey: "rollValue") as? String
-        pitchTextView.text = UserDefaults.standard.object(forKey: "pitchValue") as? String
-        yawTextView.text = UserDefaults.standard.object(forKey: "yawValue") as? String
+        rollTextView.text = UserDefaults.standard.object(forKey: tempString + "rollValue") as? String
+        pitchTextView.text = UserDefaults.standard.object(forKey: tempString + "pitchValue") as? String
+        yawTextView.text = UserDefaults.standard.object(forKey: tempString + "yawValue") as? String
+                
     }
 }
 
