@@ -44,12 +44,21 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
+            BlueprintIdentifier = "07CAF41C28D51D3500DD23C0"
+            BuildableName = "APT BioSensor.app"
+            BlueprintName = "APT BioSensor"
+            ReferencedContainer = "container:bioTech.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
             BlueprintIdentifier = "D1B46FC428D2775100C75C27"
             BuildableName = "bioTech.app"
             BlueprintName = "bioTech"
             ReferencedContainer = "container:bioTech.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
