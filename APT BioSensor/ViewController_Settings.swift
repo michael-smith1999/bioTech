@@ -157,12 +157,15 @@ class ViewController_Settings: UIViewController, UIPickerViewDelegate, UIPickerV
         }
     }
     
-    
-    @IBAction func notificationSettingsButton(_ sender: Any) {
-        print("'Notification Settings' button was pressed")
-        NotificationManager.shared.fetchNotificationSettings()
-        showNotificationSettingsUI = true
+    @IBAction func generalSettingsButton(_ sender: Any) {
+        print("'General Settings' button was pressed")
     }
+    
+//    @IBAction func notificationSettingsButton(_ sender: Any) {
+//        print("'Notification Settings' button was pressed")
+//        NotificationManager.shared.fetchNotificationSettings()
+//        showNotificationSettingsUI = true
+//    }
     
     @IBAction func aboutButton(_ sender: Any) {
         // info about the app and dev team are displayed after clicking this button

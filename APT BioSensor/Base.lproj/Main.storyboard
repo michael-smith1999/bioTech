@@ -298,6 +298,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="General Settings"/>
                                 <connections>
+                                    <action selector="generalSettingsButton:" destination="P7q-fS-AUJ" eventType="touchUpInside" id="0Lk-uL-W4A"/>
                                     <action selector="notificationSettingsButton:" destination="P7q-fS-AUJ" eventType="touchUpInside" id="o0x-0t-uHV"/>
                                 </connections>
                             </button>
