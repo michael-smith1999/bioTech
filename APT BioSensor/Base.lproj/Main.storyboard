@@ -78,10 +78,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aR6-1q-cXm">
-                                <rect key="frame" x="73" y="443" width="244" height="47"/>
+                                <rect key="frame" x="67" y="443" width="257" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Take Measurement">
+                                <buttonConfiguration key="configuration" style="plain" title="Begin Measurement">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -135,14 +135,83 @@
                     <view key="view" contentMode="scaleToFill" id="F6g-UU-a8E">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="How to take a measurement:" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iif-Hj-cGT">
+                                <rect key="frame" x="0.0" y="88" width="284" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpr-ba-IWc">
+                                <rect key="frame" x="0.0" y="150" width="390" height="241"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <mutableString key="text">- Ensure device is positioned on your right leg, 10 cm below your pelvic bone.                                                                         - The screen should be facing away from your leg and pointed down toward the ground.                                                                  - Use the image to ensure the device is properly positioned.                                            - Improper measurements will result in bad data.                                                                        </mutableString>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aptbiosensorguide2.png" translatesAutoresizingMaskIntoConstraints="NO" id="zR1-Yp-EPX">
+                                <rect key="frame" x="16" y="380" width="358" height="354"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXh-Rz-Yv0">
+                                <rect key="frame" x="46" y="724" width="299" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Take Measurement">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="34"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="6bF-4e-GKN" kind="presentation" id="6Cr-Pn-b10"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="mpw-Oa-DyX"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="DoV-5F-A7f"/>
+                    <connections>
+                        <segue destination="6bF-4e-GKN" kind="presentation" id="T4x-Ew-oyb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAe-Wa-tej" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-846" y="753"/>
+            <point key="canvasLocation" x="-809.23076923076917" y="745.73459715639808"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="VsB-rT-jyp">
+            <objects>
+                <viewController id="6bF-4e-GKN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qe3-su-dQt">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Swipe down to return to the previous screen." borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YFN-4g-0e5">
+                                <rect key="frame" x="0.0" y="593" width="390" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qro-kR-fxJ">
+                                <rect key="frame" x="38" y="121" width="315" height="446"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="start_button.png" title="">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MfU-dZ-4sG"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Apt-Ms-k8x"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fm1-lV-oUx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-20" y="752.84360189573454"/>
         </scene>
         <!--Data-->
         <scene sceneID="1ch-Br-osf">
@@ -424,9 +493,14 @@
             <point key="canvasLocation" x="1809.2307692307691" y="24.881516587677723"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="T4x-Ew-oyb"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="aptbiosensorguide2.png" width="800" height="1000"/>
         <image name="gear.badge.questionmark" catalog="system" width="128" height="111"/>
         <image name="ruler" catalog="system" width="128" height="57"/>
+        <image name="start_button.png" width="121" height="81"/>
         <image name="tray.full" catalog="system" width="128" height="88"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
