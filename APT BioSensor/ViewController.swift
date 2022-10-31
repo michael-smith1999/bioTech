@@ -52,14 +52,15 @@ class ViewController: UIViewController {
     }
     
     //determine if user has apt and by how much
-    /*func compareAngles() -> (Bool, Double){
-        if(){
+    func compareAngles() -> (Bool, Double){
+        var diff = 180 - self.yawDeg
+        if(diff >= 8){
             isAPT = true
         }else{
             isAPT = false
         }
-        return (isAPT, )
-    }*/
+        return (isAPT, diff)
+    }
     
     func requestNotificationPermission() {
         let center = UNUserNotificationCenter.current()
