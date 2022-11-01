@@ -18,8 +18,8 @@
 		07CAF44328D51D3800DD23C0 /* APT_BioSensorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CAF44228D51D3800DD23C0 /* APT_BioSensorUITestsLaunchTests.swift */; };
 		3838790328F672D1006AEE9B /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3838790228F672D1006AEE9B /* NotificationSettingsView.swift */; };
 		38BF7DD528F63D71001C0CD5 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF7DD428F63D71001C0CD5 /* NotificationManager.swift */; };
-		D14726E229105A3600E93B00 /* aptbiosensorguide2.png in Resources */ = {isa = PBXBuildFile; fileRef = D14726E129105A3600E93B00 /* aptbiosensorguide2.png */; };
-		D14726E629105EF000E93B00 /* start_button.png in Resources */ = {isa = PBXBuildFile; fileRef = D14726E529105EF000E93B00 /* start_button.png */; };
+		D14726E829116BEF00E93B00 /* aptbiosensorguide2.png in Resources */ = {isa = PBXBuildFile; fileRef = D14726E729116BEE00E93B00 /* aptbiosensorguide2.png */; };
+		D14726EA29116C0A00E93B00 /* start_button.png in Resources */ = {isa = PBXBuildFile; fileRef = D14726E929116C0A00E93B00 /* start_button.png */; };
 		D166AA4728ECBEC800B6B664 /* ViewController_Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = D166AA4628ECBEC800B6B664 /* ViewController_Display.swift */; };
 		D166AA4928ECC3AD00B6B664 /* ViewController_Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D166AA4828ECC3AD00B6B664 /* ViewController_Settings.swift */; };
 		D1B46FC928D2775100C75C27 /* bioTechApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B46FC828D2775100C75C27 /* bioTechApp.swift */; };
@@ -61,8 +61,8 @@
 		07CAF44228D51D3800DD23C0 /* APT_BioSensorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APT_BioSensorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3838790228F672D1006AEE9B /* NotificationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
 		38BF7DD428F63D71001C0CD5 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		D14726E129105A3600E93B00 /* aptbiosensorguide2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = aptbiosensorguide2.png; path = ../../../aptbiosensorguide2.png; sourceTree = "<group>"; };
-		D14726E529105EF000E93B00 /* start_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = start_button.png; path = ../../../start_button.png; sourceTree = "<group>"; };
+		D14726E729116BEE00E93B00 /* aptbiosensorguide2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aptbiosensorguide2.png; sourceTree = "<group>"; };
+		D14726E929116C0A00E93B00 /* start_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_button.png; sourceTree = "<group>"; };
 		D166AA4628ECBEC800B6B664 /* ViewController_Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Display.swift; sourceTree = "<group>"; };
 		D166AA4828ECC3AD00B6B664 /* ViewController_Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Settings.swift; sourceTree = "<group>"; };
 		D1B46FC528D2775100C75C27 /* bioTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bioTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,8 +107,8 @@
 		07CAF41E28D51D3500DD23C0 /* APT BioSensor */ = {
 			isa = PBXGroup;
 			children = (
-				D14726E529105EF000E93B00 /* start_button.png */,
-				D14726E129105A3600E93B00 /* aptbiosensorguide2.png */,
+				D14726E729116BEE00E93B00 /* aptbiosensorguide2.png */,
+				D14726E929116C0A00E93B00 /* start_button.png */,
 				07CAF41F28D51D3500DD23C0 /* AppDelegate.swift */,
 				07CAF42128D51D3500DD23C0 /* SceneDelegate.swift */,
 				07CAF42328D51D3500DD23C0 /* ViewController.swift */,
@@ -307,10 +307,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D14726E629105EF000E93B00 /* start_button.png in Resources */,
+				D14726EA29116C0A00E93B00 /* start_button.png in Resources */,
 				07CAF42C28D51D3700DD23C0 /* LaunchScreen.storyboard in Resources */,
 				07CAF42928D51D3700DD23C0 /* Assets.xcassets in Resources */,
-				D14726E229105A3600E93B00 /* aptbiosensorguide2.png in Resources */,
+				D14726E829116BEF00E93B00 /* aptbiosensorguide2.png in Resources */,
 				07CAF42728D51D3500DD23C0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
