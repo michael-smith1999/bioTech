@@ -35,7 +35,8 @@ class ViewController: UIViewController {
         // need to figure way to reset count and arrays when date switches
         let df = DateFormatter()
         df.dateFormat = "dd/MM/yyyy"
-        let curDate = Date()
+        let dateCheck = df.string(from: Date())
+        UserDefaults.standard.set(dateCheck, forKey: "currentDate")
     }
     
     func getOrientation() {
@@ -71,6 +72,14 @@ class ViewController: UIViewController {
         print(str)
         UserDefaults.standard.setValue(str, forKey: str)
         
+        if(str != UserDefaults.standard.object(forKey: "currentDate") as? String)
+        {
+            rollValues.removeAll()
+            pitchValues.removeAll()
+            yawValues.removeAll()
+            UserDefaults.standard.set(str, forKey: "currentDate")
+        }
+        
         rollValues.append(self.roll.text ?? "yoyo")
         pitchValues.append(self.pitch.text ?? "yoyo")
         yawValues.append(self.yaw.text ?? "yoyo")
@@ -83,6 +92,7 @@ class ViewController: UIViewController {
         saveCount += 1
         print(saveCount)
         print(str)
+
 
         
 
