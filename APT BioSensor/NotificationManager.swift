@@ -23,8 +23,8 @@ class NotificationManager: ObservableObject {
     func scheduleNotification() {
         // Cutomize the content
         let content = UNMutableNotificationContent()
-        content.title = "Time for your daily measurements!"
-        content.body = "Open the APTBioSensor app to record current pelvic tilt and recent pain levels."
+        content.title = "Time for your daily APTBioSensor measurement!"
+        content.body = "Open the APTBioSensor app to record current pelvic tilt"
         content.sound = UNNotificationSound.default
     
         // Specifying conditions for delivery
