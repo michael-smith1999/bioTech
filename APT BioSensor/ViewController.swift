@@ -11,18 +11,15 @@ import CoreMotion
 var tempString = ""
 var rollValues = ["Roll"]
 var pitchValues = ["Pitch"]
-var yawValues = ["Yaw"]
+var yawValues = ["Angle"]
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var roll: UILabel!
-    @IBOutlet weak var pitch: UILabel!
-    @IBOutlet weak var rollTextView: UITextView!
-    @IBOutlet weak var pitchTextView: UITextView!
-    @IBOutlet weak var yawTextView: UITextView!
-    @IBOutlet weak var yaw: UILabel!
+    let conVal = 180/Double.pi
+    var rollDeg:Int = 0
+    var yawDeg:Int = 0
+    var pitchDeg:Int = 0
     var saveCount = 1
-    
     
     var motion = CMMotionManager()
     
@@ -41,12 +38,14 @@ class ViewController: UIViewController {
     
     func getOrientation() {
         
-        motion.deviceMotionUpdateInterval = 1
+        motion.deviceMotionUpdateInterval = 0.001
         motion.startDeviceMotionUpdates(to: OperationQueue.current!){ (data, error) in
             if let trueData = data{
-                self.roll.text = "\(trueData.attitude.roll)"
-                self.yaw.text = "\(trueData.attitude.yaw)"
-                self.pitch.text = "\(trueData.attitude.pitch)"
+                self.rollDeg=Int(trueData.attitude.roll*self.conVal)
+                
+                self.yawDeg=Int(trueData.attitude.yaw*self.conVal)
+                
+                self.pitchDeg=Int(trueData.attitude.pitch*self.conVal)
             }
             
         }
@@ -64,45 +63,32 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func saveButton(_ sender: Any) {
+@IBAction func saveButton(_ sender: Any) {
+        getOrientation()
         let df = DateFormatter()
         df.dateFormat = "dd/MM/yyyy"
-        let tempDate = Date()
         let str = df.string(from: Date())
         print(str)
         UserDefaults.standard.setValue(str, forKey: str)
         
         if(str != UserDefaults.standard.object(forKey: "currentDate") as? String)
         {
-            rollValues.removeAll()
-            pitchValues.removeAll()
             yawValues.removeAll()
             UserDefaults.standard.set(str, forKey: "currentDate")
         }
-        
-        rollValues.append(self.roll.text ?? "yoyo")
-        pitchValues.append(self.pitch.text ?? "yoyo")
-        yawValues.append(self.yaw.text ?? "yoyo")
-        print(rollValues.count)
-        
-        UserDefaults.standard.set(rollValues, forKey: str + "rollValue")
-        UserDefaults.standard.set(pitchValues, forKey: str + "pitchValue")
+        yawValues.append(String(yawDeg))
+        print(yawValues.count)
         UserDefaults.standard.set(yawValues, forKey: str + "yawValue")
         tempString = str
         saveCount += 1
         print(saveCount)
         print(str)
-
-
-        
-
     }
-    
+    /*
     @IBAction func loadSaveData(_ sender: Any) {
         rollTextView.text = UserDefaults.standard.object(forKey: tempString + "rollValue") as? String
         pitchTextView.text = UserDefaults.standard.object(forKey: tempString + "pitchValue") as? String
         yawTextView.text = UserDefaults.standard.object(forKey: tempString + "yawValue") as? String
                 
-    }
+    }*/
 }
-

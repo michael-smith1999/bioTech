@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aXv-L2-ggs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aXv-L2-ggs">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,112 +18,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roll: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYN-A8-S3g">
-                                <rect key="frame" x="67" y="307" width="256" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pitch: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPJ-xt-QdS">
-                                <rect key="frame" x="61" y="339" width="268" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="sz8-aI-DUn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yaw: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2GX-RS-fpV">
-                                <rect key="frame" x="67" y="368" width="45.666666666666657" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24V-3z-JmB">
-                                <rect key="frame" x="123" y="525" width="144" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Load Save Data"/>
-                                <connections>
-                                    <action selector="loadSaveData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q0S-l0-TIW"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M5m-Wf-Lpn">
-                                <rect key="frame" x="67" y="565" width="255" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="N00-Bn-MET">
-                                <rect key="frame" x="67" y="624" width="255" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cgi-Lb-RJa">
-                                <rect key="frame" x="67" y="681" width="255" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APT BioSensor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7P-wg-ple">
-                                <rect key="frame" x="57" y="168" width="276" height="48"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aR6-1q-cXm">
-                                <rect key="frame" x="67" y="442" width="256" height="47"/>
+                                <rect key="frame" x="55" y="689" width="280" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Begin Measurement">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Need Help?">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="41"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="OZd-H7-JVI" kind="show" id="w8b-8l-maq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJc-Yz-zaQ">
-                                <rect key="frame" x="164" y="410" width="61" height="24"/>
+                                <rect key="frame" x="22" y="249" width="346" height="346"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Take Measurement" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="37"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
                                 <connections>
-                                    <action selector="saveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K6j-5n-HEw"/>
+                                    <action selector="saveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xkQ-b8-dBy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="APT BioSensor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7P-wg-ple">
+                                <rect key="frame" x="57" y="91" width="276" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
-                            <constraint firstItem="qYN-A8-S3g" firstAttribute="top" secondItem="F7P-wg-ple" secondAttribute="bottom" constant="91" id="7Vb-hv-74x"/>
                             <constraint firstItem="F7P-wg-ple" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="77" id="DCf-fC-qnh"/>
-                            <constraint firstItem="kPJ-xt-QdS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="61" id="G6x-oI-SST"/>
-                            <constraint firstItem="2GX-RS-fpV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="H9Z-Ku-CqN"/>
                             <constraint firstItem="F7P-wg-ple" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UYf-hZ-ZSv"/>
-                            <constraint firstItem="kPJ-xt-QdS" firstAttribute="top" secondItem="qYN-A8-S3g" secondAttribute="bottom" constant="8" id="eYk-KN-XYt"/>
-                            <constraint firstItem="kPJ-xt-QdS" firstAttribute="top" secondItem="qYN-A8-S3g" secondAttribute="bottom" constant="8" symbolic="YES" id="gwK-qt-Ryu"/>
-                            <constraint firstItem="F7P-wg-ple" firstAttribute="centerX" secondItem="kPJ-xt-QdS" secondAttribute="centerX" id="hOr-VT-evu"/>
-                            <constraint firstItem="2GX-RS-fpV" firstAttribute="top" secondItem="kPJ-xt-QdS" secondAttribute="bottom" constant="8" symbolic="YES" id="oSW-Ti-Ptr"/>
-                            <constraint firstItem="qYN-A8-S3g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="qUu-4I-nHF"/>
-                            <constraint firstItem="F7P-wg-ple" firstAttribute="centerX" secondItem="qYN-A8-S3g" secondAttribute="centerX" id="vk2-WZ-U0u"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dlq-eT-9Es"/>
-                    <connections>
-                        <outlet property="pitch" destination="kPJ-xt-QdS" id="HYX-Vv-xUC"/>
-                        <outlet property="pitchTextView" destination="N00-Bn-MET" id="BlS-HR-dh3"/>
-                        <outlet property="roll" destination="qYN-A8-S3g" id="50u-Uw-bDW"/>
-                        <outlet property="rollTextView" destination="M5m-Wf-Lpn" id="Hnh-B4-9kQ"/>
-                        <outlet property="yaw" destination="2GX-RS-fpV" id="IDD-jd-0Ri"/>
-                        <outlet property="yawTextView" destination="cgi-Lb-RJa" id="YTT-rB-6gV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -137,8 +72,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpr-ba-IWc">
-                                <rect key="frame" x="0.0" y="150" width="390" height="222"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aptbiosensorguide2.png" translatesAutoresizingMaskIntoConstraints="NO" id="zR1-Yp-EPX">
+                                <rect key="frame" x="16" y="407" width="358" height="354"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpr-ba-IWc">
+                                <rect key="frame" x="8" y="135" width="374" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">- Ensure device is positioned on your right leg, 10 cm below your pelvic bone.                                                                         - The screen should be facing away from your leg and pointed down towards the front of the knee                                                             - Always use the same position every time you take a measurement                                                                   </string>
@@ -146,73 +85,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aptbiosensorguide2.png" translatesAutoresizingMaskIntoConstraints="NO" id="zR1-Yp-EPX">
-                                <rect key="frame" x="16" y="380" width="358" height="354"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXh-Rz-Yv0">
-                                <rect key="frame" x="46" y="724" width="299" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Take Measurement">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="34"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="6bF-4e-GKN" kind="presentation" id="6Cr-Pn-b10"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="How to take a measurement:" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iif-Hj-cGT">
-                                <rect key="frame" x="53" y="88" width="284" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mpw-Oa-DyX"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="DoV-5F-A7f"/>
-                    <connections>
-                        <segue destination="6bF-4e-GKN" kind="presentation" id="T4x-Ew-oyb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAe-Wa-tej" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-809.23076923076917" y="745.73459715639808"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="VsB-rT-jyp">
-            <objects>
-                <viewController id="6bF-4e-GKN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Qe3-su-dQt">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Swipe down to return to the previous screen." borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YFN-4g-0e5">
-                                <rect key="frame" x="0.0" y="590" width="390" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qro-kR-fxJ">
-                                <rect key="frame" x="38" y="120" width="315" height="446"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="start_button.png" title="">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="MfU-dZ-4sG"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Apt-Ms-k8x"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fm1-lV-oUx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-20" y="752.84360189573454"/>
         </scene>
         <!--Data-->
         <scene sceneID="1ch-Br-osf">
@@ -228,14 +109,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="s4F-e7-CdV">
-                                <rect key="frame" x="90" y="278" width="223" height="115"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxb-na-het">
                                 <rect key="frame" x="162" y="205" width="66" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -245,34 +118,24 @@
                                     <action selector="loadDateData:" destination="Acx-GX-Wel" eventType="touchUpInside" id="7FP-Ha-CcF"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Z7L-ex-dYY">
-                                <rect key="frame" x="90" y="424" width="223" height="115"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vFz-vi-9EX">
-                                <rect key="frame" x="91" y="575" width="222" height="115"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hel-oH-DXz">
                                 <rect key="frame" x="48" y="153" width="211" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </datePicker>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vFz-vi-9EX">
+                                <rect key="frame" x="84" y="248" width="222" height="221"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hpq-y2-weS"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Data" image="tray.full" catalog="system" id="nt3-kg-n5a"/>
                     <connections>
-                        <outlet property="dateOutput" destination="s4F-e7-CdV" id="CQh-DB-eQu"/>
-                        <outlet property="dateOutput2" destination="Z7L-ex-dYY" id="dcd-MD-gbj"/>
                         <outlet property="dateOutput3" destination="vFz-vi-9EX" id="Doj-Xn-Nbg"/>
                         <outlet property="datePicker" destination="hel-oH-DXz" id="b0b-SI-Ps1"/>
                     </connections>
@@ -494,14 +357,10 @@
             <point key="canvasLocation" x="1809.2307692307691" y="24.881516587677723"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="T4x-Ew-oyb"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="aptbiosensorguide2.png" width="800" height="1000"/>
         <image name="gear.badge.questionmark" catalog="system" width="128" height="115"/>
         <image name="ruler" catalog="system" width="128" height="57"/>
-        <image name="start_button.png" width="121" height="81"/>
         <image name="tray.full" catalog="system" width="128" height="88"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
