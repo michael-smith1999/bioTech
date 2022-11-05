@@ -62,36 +62,7 @@ class ViewController_Display: UIViewController {
     }
     @IBAction func loadDateData(_ sender: Any) {
         //        dateOutput.text = UserDefaults.standard.string(forKey: tempString)
-        print(queryVal)
-        let rolls = UserDefaults.standard.object(forKey: queryVal + "rollValue") as? [String] ?? [""]
-        print(rolls.count)
-        var count = 0;
-        for roll in rolls {
-            if(count == 0){
-                rollOutput = roll + "\n"
-            }
-            else{
-                rollOutput = rollOutput + String(count) + ": " + roll + "\n"
-            }
-            count += 1
-            print(roll)
-        }
-        dateOutput.text = rollOutput
-        
-        count = 0;
-        
-        let pitches = UserDefaults.standard.object(forKey: queryVal + "pitchValue") as? [String] ?? [""]
-        for pitch in pitches {
-            if(count == 0){
-                pitchOutput = pitch + "\n"
-            }
-            else{
-                pitchOutput = pitchOutput + String(count) + ": " + pitch + "\n"
-            }
-            count += 1
-        }
-        dateOutput2.text = pitchOutput
-        count = 0
+        var count = 0
         let yaws = UserDefaults.standard.object(forKey: queryVal + "yawValue") as? [String] ?? [""]
         for yaw in yaws {
             if(count == 0){
