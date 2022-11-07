@@ -8,44 +8,45 @@
 import Foundation
 import UserNotifications
 
-class NotificationManager: ObservableObject {
-    static let shared = NotificationManager()
-    @Published var settings: UNNotificationSettings?
-    
-    func fetchNotificationSettings() {
-        UNUserNotificationCenter.current().getNotificationSettings { settings in
-            DispatchQueue.main.async {
-                self.settings = settings
-            }
+protocol INotificationManager {
+    var handleNotification: ((UNNotification) -> Void)? { get }
+    func requestPermission(completionHandler: @escaping (Bool, Error?) -> Void)
+    func scheduleNotification(id: String, content: UNNotificationContent, trigger: UNNotificationTrigger)
+    func removePendingNotification(id: String)
+}
+
+class NotificationManager: NSObject, UNUserNotificationCenterDelegate, INotificationManager {
+    let notificationCenter: UNUserNotificationCenter
+    var handleNotification: ((UNNotification) -> Void)?
+
+    init(handleNotification: ((UNNotification) -> Void)? = nil) {
+        self.notificationCenter = UNUserNotificationCenter.current()
+        self.handleNotification = handleNotification
+    }
+
+    func requestPermission(completionHandler: @escaping (Bool, Error?) -> Void) {
+        notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { isGranted, error in
+            completionHandler(isGranted, error)
         }
     }
 
-    func scheduleNotification() {
-        // Cutomize the content
-        let content = UNMutableNotificationContent()
-        content.title = "Time for your daily APTBioSensor measurement!"
-        content.body = "Open the APTBioSensor app to record current pelvic tilt"
-        content.sound = UNNotificationSound.default
-    
-        // Specifying conditions for delivery
-        var dateComponents = DateComponents()
-        dateComponents.calendar = Calendar.current
-    
-        dateComponents.hour = 20 // 20:00 hours (8pm)
-    
-        // Create the trigger as a repeating event
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-    
-        // Create the request
-        let uuidString = UUID().uuidString
-        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
-    
-        // Schedule the request with the system
-        let notificationCenter = UNUserNotificationCenter.current()
-        notificationCenter.add(request) { (error) in
-            if let error = error {
-                print(error)
-            }
+    func scheduleNotification(id: String, content: UNNotificationContent, trigger: UNNotificationTrigger) {
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        notificationCenter.add(request)
+    }
+
+    func removePendingNotification(id: String) {
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [id])
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> ()) {
+        completionHandler([.alert, .badge, .sound])
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> ()) {
+        if let handler = self.handleNotification  {
+            handler(response.notification)
         }
+        completionHandler()
     }
 }
