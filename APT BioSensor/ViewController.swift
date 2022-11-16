@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         }
         pitchValues.append(String(pitchDeg))
         print(pitchValues.count)
-        UserDefaults.standard.set(pitchValues, forKey: str + "yawValue")
+        UserDefaults.standard.set(pitchValues, forKey: str + "pitchValue")
         tempString = str
         saveCount += 1
         print(saveCount)
