@@ -38,14 +38,16 @@ class ViewController: UIViewController {
     
     func getOrientation() {
         
-        motion.deviceMotionUpdateInterval = 0.001
-        motion.startDeviceMotionUpdates(to: OperationQueue.current!){ (data, error) in
+        motion.deviceMotionUpdateInterval = 0.0000001
+        motion.startDeviceMotionUpdates(
+            using: .xMagneticNorthZVertical,
+            to: OperationQueue.current!){ (data, error) in
             if let trueData = data{
-                self.rollDeg=Int(trueData.attitude.roll*self.conVal)
+                self.rollDeg=Int(90-abs(trueData.attitude.roll*self.conVal))
                 
-                self.yawDeg=Int(trueData.attitude.yaw*self.conVal)
+                self.yawDeg=Int(90-abs(trueData.attitude.yaw*self.conVal))
                 
-                self.pitchDeg=Int(trueData.attitude.pitch*self.conVal)
+                self.pitchDeg=Int(90-abs(trueData.attitude.pitch*self.conVal))
             }
             
         }
@@ -64,7 +66,6 @@ class ViewController: UIViewController {
     }
     
 @IBAction func saveButton(_ sender: Any) {
-        getOrientation()
         let df = DateFormatter()
         df.dateFormat = "dd/MM/yyyy"
         let str = df.string(from: Date())
@@ -73,12 +74,12 @@ class ViewController: UIViewController {
         
         if(str != UserDefaults.standard.object(forKey: "currentDate") as? String)
         {
-            yawValues.removeAll()
+            pitchValues.removeAll()
             UserDefaults.standard.set(str, forKey: "currentDate")
         }
-        yawValues.append(String(yawDeg))
-        print(yawValues.count)
-        UserDefaults.standard.set(yawValues, forKey: str + "yawValue")
+        pitchValues.append(String(pitchDeg))
+        print(pitchValues.count)
+        UserDefaults.standard.set(pitchValues, forKey: str + "yawValue")
         tempString = str
         saveCount += 1
         print(saveCount)
