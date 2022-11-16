@@ -12,6 +12,7 @@ var tempString = ""
 var rollValues = ["Roll"]
 var pitchValues = ["Pitch"]
 var yawValues = ["Angle"]
+var updatedToday = false
 
 class ViewController: UIViewController {
     

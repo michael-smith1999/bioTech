@@ -25,32 +25,37 @@ import Charts
 //}
 
 
-class ViewController_Display: UIViewController {
+class ViewController_Display: UIViewController, UITextViewDelegate {
     
-   // @IBOutlet weak var LineChartView: UIView!
+    // @IBOutlet weak var LineChartView: UIView!
     @IBOutlet weak var dateOutput: UITextView!
     
     @IBOutlet weak var dateOutput2: UITextView!
     
     @IBOutlet weak var dateOutput3: UITextView!
     
+    @IBOutlet weak var deleteField: UITextField!
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     var queryVal = ""
     var rollOutput = ""
     var pitchOutput = ""
     var yawOutput = ""
+    var globCount = -1;
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        self.deleteField.delegate = self
         // Do any additional setup after loading the view.
         
+        deleteField.isUserInteractionEnabled = true
         self.datePicker.datePickerMode = .date
         self.datePicker.addTarget(self, action:#selector( self.datePickerChanged), for: .valueChanged)
         let df = DateFormatter()
         df.dateFormat = "dd/MM/yyyy"
         queryVal = df.string(from: Date())
+        
         
     }
     
@@ -75,8 +80,44 @@ class ViewController_Display: UIViewController {
             count += 1
         }
         dateOutput3.text =  yawOutput
+        globCount = count
         
-//        let data: [YawStruct] = [
+    }
+    
+    @IBAction func deleteButton(_ sender: Any) {
+        updatedToday = true
+        var count = 0
+        let tempText = deleteField.text ?? ""
+        let deleteInt = Int(tempText) ?? -1
+        var newYaws = UserDefaults.standard.object(forKey: queryVal + "yawValue") as? [String] ?? [""]
+        print(deleteInt)
+        print(globCount)
+        if(deleteInt > -1 && deleteInt <= globCount && deleteInt < newYaws.count){
+            newYaws.remove(at: deleteInt)
+        }
+        UserDefaults.standard.set(newYaws, forKey: queryVal + "yawValue")
+        let yaws = UserDefaults.standard.object(forKey: queryVal + "yawValue") as? [String] ?? [""]
+        for yaw in yaws {
+            if(count == 0){
+                yawOutput = yaw + "\n"
+            }
+            else{
+                yawOutput = yawOutput + String(count) + ": " + yaw + "\n"
+                //                let tempDouble = Double(yaw) ?? -1000
+            }
+            count += 1
+        }
+        dateOutput3.text =  yawOutput
+        globCount = count
+        yawValues = newYaws
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        deleteField.resignFirstResponder()
+        return true
+    }
+    //        let data: [YawStruct] = [
 //            .init(reading: 0, value: 3),
 //            .init(reading: 1, value: 6),
 //            .init(reading: 2, value: 11)
@@ -115,5 +156,5 @@ class ViewController_Display: UIViewController {
          }
          */
         
-    }
+    
 }
