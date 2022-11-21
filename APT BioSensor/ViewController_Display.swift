@@ -25,7 +25,7 @@ import Charts
 //}
 
 
-class ViewController_Display: UIViewController, UITextViewDelegate {
+class ViewController_Display: UIViewController, UITextFieldDelegate {
     
     // @IBOutlet weak var LineChartView: UIView!
     @IBOutlet weak var dateOutput: UITextView!
@@ -46,7 +46,7 @@ class ViewController_Display: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.deleteField.delegate = self
+        self.deleteField.delegate = self
         // Do any additional setup after loading the view.
         
         deleteField.isUserInteractionEnabled = true
@@ -68,18 +68,18 @@ class ViewController_Display: UIViewController, UITextViewDelegate {
     @IBAction func loadDateData(_ sender: Any) {
         //        dateOutput.text = UserDefaults.standard.string(forKey: tempString)
         var count = 0
-        let yaws = UserDefaults.standard.object(forKey: queryVal + "yawValue") as? [String] ?? [""]
-        for yaw in yaws {
+        let pitches = UserDefaults.standard.object(forKey: queryVal + "pitchValue") as? [String] ?? [""]
+        for pitch in pitches {
             if(count == 0){
-                yawOutput = yaw + "\n"
+                pitchOutput = pitch + "\n"
             }
             else{
-                yawOutput = yawOutput + String(count) + ": " + yaw + "\n"
+                pitchOutput = pitchOutput + String(count) + ": " + pitch + "\n"
                 //                let tempDouble = Double(yaw) ?? -1000
             }
             count += 1
         }
-        dateOutput3.text =  yawOutput
+        dateOutput3.text =  pitchOutput
         globCount = count
         
     }
@@ -89,27 +89,27 @@ class ViewController_Display: UIViewController, UITextViewDelegate {
         var count = 0
         let tempText = deleteField.text ?? ""
         let deleteInt = Int(tempText) ?? -1
-        var newYaws = UserDefaults.standard.object(forKey: queryVal + "yawValue") as? [String] ?? [""]
+        var newPitches = UserDefaults.standard.object(forKey: queryVal + "pitchValue") as? [String] ?? [""]
         print(deleteInt)
         print(globCount)
-        if(deleteInt > -1 && deleteInt <= globCount && deleteInt < newYaws.count){
-            newYaws.remove(at: deleteInt)
+        if(deleteInt > -1 && deleteInt <= globCount && deleteInt < newPitches.count){
+            newPitches.remove(at: deleteInt)
         }
-        UserDefaults.standard.set(newYaws, forKey: queryVal + "yawValue")
-        let yaws = UserDefaults.standard.object(forKey: queryVal + "yawValue") as? [String] ?? [""]
-        for yaw in yaws {
+        UserDefaults.standard.set(newPitches, forKey: queryVal + "pitchValue")
+        let pitches = UserDefaults.standard.object(forKey: queryVal + "pitchValue") as? [String] ?? [""]
+        for pitch in pitches {
             if(count == 0){
-                yawOutput = yaw + "\n"
+                pitchOutput = pitch + "\n"
             }
             else{
-                yawOutput = yawOutput + String(count) + ": " + yaw + "\n"
+                pitchOutput = pitchOutput + String(count) + ": " + pitch + "\n"
                 //                let tempDouble = Double(yaw) ?? -1000
             }
             count += 1
         }
-        dateOutput3.text =  yawOutput
+        dateOutput3.text =  pitchOutput
         globCount = count
-        yawValues = newYaws
+        pitchValues = newPitches
         
     }
     
