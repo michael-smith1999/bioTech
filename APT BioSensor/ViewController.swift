@@ -17,9 +17,9 @@ var updatedToday = false
 class ViewController: UIViewController {
     
     let conVal = 180/Double.pi
-    var rollDeg:Int = 0
-    var yawDeg:Int = 0
-    var pitchDeg:Int = 0
+    var rollDeg:Float = 0
+    var yawDeg:Float = 0
+    var pitchDeg:Float = 0
     var saveCount = 1
     
     var motion = CMMotionManager()
@@ -44,11 +44,11 @@ class ViewController: UIViewController {
             using: .xMagneticNorthZVertical,
             to: OperationQueue.current!){ (data, error) in
             if let trueData = data{
-                self.rollDeg=Int(90-abs(trueData.attitude.roll*self.conVal))
+                self.rollDeg=Float(Int(10*(90-abs(trueData.attitude.roll*self.conVal))))/10
                 
-                self.yawDeg=Int(90-abs(trueData.attitude.yaw*self.conVal))
+                self.yawDeg=Float(Int(10*(90-abs(trueData.attitude.yaw*self.conVal))))/10
                 
-                self.pitchDeg=Int(90-abs(trueData.attitude.pitch*self.conVal))
+                self.pitchDeg=Float(Int(10*(90-abs(trueData.attitude.pitch*self.conVal))))/10
             }
             
         }
