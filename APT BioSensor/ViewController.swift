@@ -78,6 +78,9 @@ class ViewController: UIViewController {
             pitchValues.removeAll()
             UserDefaults.standard.set(str, forKey: "currentDate")
         }
+        else{
+            pitchValues = UserDefaults.standard.object(forKey: str + "pitchValue") as? [String] ?? [""]
+        }
         pitchValues.append(String(pitchDeg))
         print(pitchValues.count)
         UserDefaults.standard.set(pitchValues, forKey: str + "pitchValue")
