@@ -9,9 +9,9 @@ import UIKit
 import CoreMotion
 
 var tempString = ""
-var rollValues = ["Roll"]
-var pitchValues = ["Pitch"]
-var yawValues = ["Angle"]
+var rollValues = [""]
+var pitchValues = [""]
+var yawValues = [""]
 var updatedToday = false
 
 class ViewController: UIViewController {
@@ -72,11 +72,14 @@ class ViewController: UIViewController {
         let str = df.string(from: Date())
         print(str)
         UserDefaults.standard.setValue(str, forKey: str)
-        
+    
         if(str != UserDefaults.standard.object(forKey: "currentDate") as? String)
         {
             pitchValues.removeAll()
             UserDefaults.standard.set(str, forKey: "currentDate")
+        }
+        else{
+            pitchValues = UserDefaults.standard.object(forKey: str + "pitchValue") as? [String] ?? [""]
         }
         pitchValues.append(String(pitchDeg))
         print(pitchValues.count)
