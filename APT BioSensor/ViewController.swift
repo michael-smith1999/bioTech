@@ -9,9 +9,9 @@ import UIKit
 import CoreMotion
 
 var tempString = ""
-var rollValues = [""]
-var pitchValues = [""]
-var yawValues = [""]
+var rollValues = ["Angle"]
+var pitchValues = ["Angle"]
+var yawValues = ["Angle"]
 var updatedToday = false
 
 class ViewController: UIViewController {

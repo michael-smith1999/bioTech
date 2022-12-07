@@ -71,7 +71,7 @@ class ViewController_Display: UIViewController, UITextFieldDelegate {
         let pitches = UserDefaults.standard.object(forKey: queryVal + "pitchValue") as? [String] ?? [""]
         for pitch in pitches {
             if(count == 0){
-                pitchOutput = pitch + "\n"
+                pitchOutput = ""//= pitch + "\n"
             }
             else{
                 pitchOutput = pitchOutput + String(count) + ": " + pitch + "\n"
@@ -92,14 +92,14 @@ class ViewController_Display: UIViewController, UITextFieldDelegate {
         var newPitches = UserDefaults.standard.object(forKey: queryVal + "pitchValue") as? [String] ?? [""]
         print(deleteInt)
         print(globCount)
-        if(deleteInt > -1 && deleteInt <= globCount && deleteInt < newPitches.count){
+        if(deleteInt > 0 && deleteInt <= globCount && deleteInt < newPitches.count){
             newPitches.remove(at: deleteInt)
         }
         UserDefaults.standard.set(newPitches, forKey: queryVal + "pitchValue")
         let pitches = UserDefaults.standard.object(forKey: queryVal + "pitchValue") as? [String] ?? [""]
         for pitch in pitches {
             if(count == 0){
-                pitchOutput = pitch + "\n"
+                pitchOutput = "" //+ "\n"
             }
             else{
                 pitchOutput = pitchOutput + String(count) + ": " + pitch + "\n"
