@@ -6,6 +6,21 @@
 //
 
 import SwiftUI
+import CoreMotion
+
+class MotionManager: ObservableObject {
+    private let motionManager = CMMotionManager()
+    @Published var roll = 0.0
+    
+    init() {
+        motionManager.startDeviceMotionUpdates(to:.main) { [weak self] data, error in guard let motion = data?.attitude else {return}
+            self?.roll = motion.roll
+        }
+    }
+}
+
+
+let lightGrey = Color(red: 0.8667, green: 0.8667, blue: 0.8667)
 
 struct ContentView: View {
     
@@ -16,7 +31,6 @@ struct ContentView: View {
             interval:"Test"
         )
         ]
-    
     
     @State private var tabSelection = 1
     @State private var buttonPressed = 0
@@ -39,7 +53,7 @@ struct ContentView: View {
                 .tag(2)
             Notification(currentDate:$currentDate)
                 .tabItem {
-                    Label("Notification", systemImage: "bell.and.waves.left.and.right")
+                    Label("Notification", systemImage: "bell")
                 }
                 .tag(3)
             QuickStartGuide()
@@ -59,6 +73,8 @@ struct Reading: Identifiable {
 
 struct MainMenu: View {
     @Binding var tabSelection: Int
+    @StateObject private var motion = MotionManager()
+    
     var body: some View {
         ZStack{
             /*
@@ -73,7 +89,7 @@ struct MainMenu: View {
                 Text("APT BioSensor")
                     .font(.largeTitle)
                     .fontWeight(.heavy)
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color.orange)
                 Spacer()
                 
                 Button(action: {
@@ -85,9 +101,10 @@ struct MainMenu: View {
                         .foregroundColor(Color.white)
                         .multilineTextAlignment(.center)
                         .frame(width: UIScreen.main.bounds.width*3/4, height: UIScreen.main.bounds.width*3/4)
-                        .background(RadialGradient(gradient: Gradient(colors: [.gray, .black]), center: .center, startRadius:UIScreen.main.bounds.width/3 , endRadius: UIScreen.main.bounds.width*3/8))
+                        .background(lightGrey)
                         .clipShape(Circle())
                 }.buttonStyle(PlainButtonStyle())
+                    .shadow(radius: 2)
                 Spacer()
                 
                 Text("Quick Start Guide")
@@ -152,8 +169,7 @@ struct Measurement: View {
                 HStack{
                     Spacer()
                     TextField("Delete row",text:$textInput)
-                        .font(.subheadline)
-                        .fontWeight(.heavy)
+                        .font(.subheadline.weight(.bold))
                         .foregroundColor(Color.white)
                         .multilineTextAlignment(.center)
                         .frame(width: UIScreen.main.bounds.width*5/10, height: UIScreen.main.bounds.width*1/10)
@@ -165,8 +181,7 @@ struct Measurement: View {
                     Button("Delete") {
                         /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
                     }
-                    .font(.subheadline)
-                        .fontWeight(.heavy)
+                    .font(.subheadline.weight(.bold))
                         .foregroundColor(Color.white)
                         .multilineTextAlignment(.center)
                         .frame(width: UIScreen.main.bounds.width*5/10, height: UIScreen.main.bounds.width*1/10)
