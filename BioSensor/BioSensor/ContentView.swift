@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreMotion
 
+/*
 class MotionManager: ObservableObject {
     private let motionManager = CMMotionManager()
     @Published var roll = 0.0
@@ -18,6 +19,7 @@ class MotionManager: ObservableObject {
         }
     }
 }
+ */
 
 
 let lightGrey = Color(red: 0.8667, green: 0.8667, blue: 0.8667)
@@ -73,7 +75,7 @@ struct Reading: Identifiable {
 
 struct MainMenu: View {
     @Binding var tabSelection: Int
-    @StateObject private var motion = MotionManager()
+    let motion = CMMotionManager()
     
     var body: some View {
         ZStack{
@@ -94,6 +96,10 @@ struct MainMenu: View {
                 
                 Button(action: {
                     print("Pressed!")
+                    motion.startGyroUpdates()
+                    let roll = motion.gyroData
+                    motion.stopGyroUpdates()
+                    print(roll as Any)
                 }){
                     Text("Start Measurement")
                         .font(.largeTitle)
