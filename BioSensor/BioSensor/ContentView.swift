@@ -21,7 +21,7 @@ class MotionManager: ObservableObject {
 }
  */
 
-
+let skyBlue = Color(red: 0.4627, green: 0.8392, blue: 1.0)
 let lightGrey = Color(red: 0.8667, green: 0.8667, blue: 0.8667)
 
 struct ContentView: View {
@@ -85,7 +85,7 @@ struct MainMenu: View {
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
             ).edgesIgnoringSafeArea([.top])*/
-            Color.teal.edgesIgnoringSafeArea([.top])
+            skyBlue.edgesIgnoringSafeArea([.top])
             VStack {
                 Spacer()
                 Text("APT BioSensor")
@@ -133,7 +133,7 @@ struct Measurement: View {
     @Binding var textInput:String
     var body: some View {
         ZStack{
-            Color.teal.edgesIgnoringSafeArea([.top])
+            skyBlue.edgesIgnoringSafeArea([.top])
             VStack{
                 Spacer()
                 HStack{
@@ -205,7 +205,7 @@ struct Notification: View {
     @Binding var currentDate:Date
     var body: some View {
         ZStack{
-            Color.teal.edgesIgnoringSafeArea([.top])
+            skyBlue.edgesIgnoringSafeArea([.top])
             VStack{
                 HStack{
                     Text("Notification")
@@ -258,7 +258,7 @@ struct Notification: View {
 struct QuickStartGuide: View {
     var body: some View {
         ZStack{
-            Color.teal.edgesIgnoringSafeArea([.top])
+            skyBlue.edgesIgnoringSafeArea([.top])
             VStack{
                 Text("This place is for information, ideally in list view")
             }
