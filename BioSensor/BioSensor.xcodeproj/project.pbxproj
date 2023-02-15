@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		366F3F68299D5E4C000EB18D /* BioSensor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 366F3F66299D5E4C000EB18D /* BioSensor.xcdatamodeld */; };
 		366F3F6A299D5EB0000EB18D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F3F69299D5EB0000EB18D /* DataController.swift */; };
+		366F3F6D299D6C58000EB18D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F3F6C299D6C58000EB18D /* MainView.swift */; };
+		366F3F71299D6EC0000EB18D /* MeasurementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F3F70299D6EC0000EB18D /* MeasurementPage.swift */; };
+		366F3F73299D6F43000EB18D /* NotificationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F3F72299D6F43000EB18D /* NotificationPage.swift */; };
+		366F3F75299D70CD000EB18D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F3F74299D70CD000EB18D /* ProfileView.swift */; };
+		366F3F77299D74F2000EB18D /* QuickStartGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F3F76299D74F2000EB18D /* QuickStartGuide.swift */; };
 		9096D906297C29580018DF54 /* BioSensorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9096D905297C29580018DF54 /* BioSensorApp.swift */; };
 		9096D908297C29580018DF54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9096D907297C29580018DF54 /* ContentView.swift */; };
 		9096D90A297C295A0018DF54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9096D909297C295A0018DF54 /* Assets.xcassets */; };
@@ -38,6 +43,12 @@
 /* Begin PBXFileReference section */
 		366F3F67299D5E4C000EB18D /* BioSensor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BioSensor.xcdatamodel; sourceTree = "<group>"; };
 		366F3F69299D5EB0000EB18D /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		366F3F6B299D6B8A000EB18D /* BioSensor-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BioSensor-Bridging-Header.h"; path = "../../../Desktop/bioTech/BioSensor/BioSensor-Bridging-Header.h"; sourceTree = "<group>"; };
+		366F3F6C299D6C58000EB18D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		366F3F70299D6EC0000EB18D /* MeasurementPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementPage.swift; sourceTree = "<group>"; };
+		366F3F72299D6F43000EB18D /* NotificationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPage.swift; sourceTree = "<group>"; };
+		366F3F74299D70CD000EB18D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		366F3F76299D74F2000EB18D /* QuickStartGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuickStartGuide.swift; path = ../../../.Trash/QuickStartGuide.swift; sourceTree = "<group>"; };
 		9096D902297C29580018DF54 /* BioSensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BioSensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9096D905297C29580018DF54 /* BioSensorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioSensorApp.swift; sourceTree = "<group>"; };
 		9096D907297C29580018DF54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,12 +110,18 @@
 		9096D904297C29580018DF54 /* BioSensor */ = {
 			isa = PBXGroup;
 			children = (
+				9096D909297C295A0018DF54 /* Assets.xcassets */,
+				366F3F6B299D6B8A000EB18D /* BioSensor-Bridging-Header.h */,
+				9096D90B297C295A0018DF54 /* BioSensor.entitlements */,
 				9096D905297C29580018DF54 /* BioSensorApp.swift */,
 				9096D907297C29580018DF54 /* ContentView.swift */,
-				9096D909297C295A0018DF54 /* Assets.xcassets */,
-				9096D90B297C295A0018DF54 /* BioSensor.entitlements */,
+				366F3F74299D70CD000EB18D /* ProfileView.swift */,
+				366F3F72299D6F43000EB18D /* NotificationPage.swift */,
+				366F3F70299D6EC0000EB18D /* MeasurementPage.swift */,
+				366F3F6C299D6C58000EB18D /* MainView.swift */,
 				366F3F66299D5E4C000EB18D /* BioSensor.xcdatamodeld */,
 				366F3F69299D5EB0000EB18D /* DataController.swift */,
+				366F3F76299D74F2000EB18D /* QuickStartGuide.swift */,
 				9096D90C297C295A0018DF54 /* Preview Content */,
 			);
 			path = BioSensor;
@@ -266,8 +283,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				366F3F68299D5E4C000EB18D /* BioSensor.xcdatamodeld in Sources */,
+				366F3F77299D74F2000EB18D /* QuickStartGuide.swift in Sources */,
+				366F3F71299D6EC0000EB18D /* MeasurementPage.swift in Sources */,
 				366F3F6A299D5EB0000EB18D /* DataController.swift in Sources */,
 				9096D908297C29580018DF54 /* ContentView.swift in Sources */,
+				366F3F73299D6F43000EB18D /* NotificationPage.swift in Sources */,
+				366F3F75299D70CD000EB18D /* ProfileView.swift in Sources */,
+				366F3F6D299D6C58000EB18D /* MainView.swift in Sources */,
 				9096D906297C29580018DF54 /* BioSensorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,7 +458,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
@@ -473,7 +495,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;

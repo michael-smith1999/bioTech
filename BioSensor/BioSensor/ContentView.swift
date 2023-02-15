@@ -8,26 +8,13 @@
 import SwiftUI
 import CoreMotion
 
-/*
-class MotionManager: ObservableObject {
-    private let motionManager = CMMotionManager()
-    @Published var roll = 0.0
-    
-    init() {
-        motionManager.startDeviceMotionUpdates(to:.main) { [weak self] data, error in guard let motion = data?.attitude else {return}
-            self?.roll = motion.roll
-        }
-    }
-}
- */
 
 let skyBlue = Color(red: 0.4627, green: 0.8392, blue: 1.0)
 let lightGrey = Color(red: 0.8667, green: 0.8667, blue: 0.8667)
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var tilts: FetchedResults<Tilt>
     
+    let largeConfig = UIImage.SymbolConfiguration(pointSize: 140, weight: .bold, scale: .large)
 
     @State private var readings =        [
         Reading(
@@ -42,29 +29,24 @@ struct ContentView: View {
     @State private var textInput = ""
     var body: some View {
         TabView (selection: $tabSelection){
-            MainMenu(tabSelection: $tabSelection)
-                .tabItem {
-                    Label("Menu", systemImage: "list.dash")
-                }
-            
-                .tag(1)
-            
             Measurement(currentDate:$currentDate,
                         reading:$readings, textInput:$textInput)
+            .tabItem {
+                Label("Data", systemImage: "chart.xyaxis.line")
+            }
+            .tag(1)
+            
+            MainMenu(tabSelection: $tabSelection)
                 .tabItem {
-                    Label("Measurement", systemImage: "square.and.pencil")
+                    Label("Measure", systemImage: "bolt.heart")
                 }
                 .tag(2)
-            Notification(currentDate:$currentDate)
+            
+            ProfileView()
                 .tabItem {
-                    Label("Notification", systemImage: "bell")
+                    Label("Profile", systemImage: "person.fill")
                 }
                 .tag(3)
-            QuickStartGuide()
-                .tabItem {
-                    Label("Quick Start", systemImage: "gear.badge.questionmark")
-                }
-                .tag(4)
         }
     }
 }
@@ -73,219 +55,6 @@ struct Reading: Identifiable {
     let date: String
     let interval:String
     let id = UUID()
-}
-
-struct MainMenu: View {
-    @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var tilts: FetchedResults<Tilt>
-    @Binding var tabSelection: Int
-    var motion = CMMotionManager()
-    let conVal = 180/Double.pi
-    @State var pelvicTilt:Double = 0.0
-    var body: some View {
-        ZStack{
-            /*
-            LinearGradient(
-                                colors: [.blue, .yellow],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-            ).edgesIgnoringSafeArea([.top])*/
-            skyBlue.edgesIgnoringSafeArea([.top])
-            VStack {
-                Spacer()
-                Text("APT BioSensor")
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                    .foregroundColor(Color.orange)
-                Spacer()
-                
-                Button(action: {
-                    print("Pressed!")
-                    Measure()
-                    let tilt = Tilt(context: moc)
-                    tilt.pitch = pelvicTilt
-                    
-                    try? moc.save()
-                }){
-                    Text("Start Measurement")
-                        .font(.largeTitle)
-                        .fontWeight(.heavy)
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.center)
-                        .frame(width: UIScreen.main.bounds.width*3/4, height: UIScreen.main.bounds.width*3/4)
-                        .background(lightGrey)
-                        .clipShape(Circle())
-                }.buttonStyle(PlainButtonStyle())
-                    .shadow(radius: 2)
-                Spacer()
-                
-                Text("Quick Start Guide")
-                    .font(.title2)
-                    .foregroundColor(.white)
-                    .underline()
-                    .onTapGesture {
-                        self.tabSelection=4
-                    }
-                Spacer()
-            }
-        }
-        
-    }
-    
-    func Measure() {
-        if self.motion.isDeviceMotionAvailable {
-            self.motion.deviceMotionUpdateInterval = 0.0000001
-            self.motion.startDeviceMotionUpdates(
-                using: .xMagneticNorthZVertical,
-                to: .main) {(data, error) in
-                    if let trueData = data{
-                        self.pelvicTilt = 85 - abs(trueData.attitude.pitch * self.conVal)
-                        //Double(Int(10*(90-abs(trueData.attitude.yaw*self.conVal))))/10
-                    }
-                }
-        }
-    }
-}
-
-
-
-struct Measurement: View {
-    @Binding var currentDate:Date
-    @Binding var reading:[Reading]
-    @Binding var textInput:String
-    var body: some View {
-        ZStack{
-            skyBlue.edgesIgnoringSafeArea([.top])
-            VStack{
-                Spacer()
-                HStack{
-                    Spacer()
-                    DatePicker("",
-                               selection: $currentDate,displayedComponents: .date)
-                        .labelsHidden()
-                        .frame(width: 150, height: 80, alignment: .center)
-                        .clipped()
-                    
-                    Spacer()
-                }
-                Spacer()
-                TextEditor(text: .constant("Placeholder for chart"))
-                    .padding(.horizontal)
-                HStack{
-                    Spacer()
-                    /*
-                    Table(reading) {
-                        TableColumn("Date",value: \.date)
-                        TableColumn("Time Interval (s)", value:\.interval)
-                    }
-                    */
-                    List {
-                        HStack{
-                            Text("Content1")
-                            Spacer()
-                            Text("Value")
-                        }
-                        HStack{
-                            Text("Content1")
-                            Spacer()
-                            Text("Value")
-                        }
-                    }
-                    Spacer()
-                }
-                Spacer()
-                HStack{
-                    Spacer()
-                    TextField("Delete row",text:$textInput)
-                        .font(.subheadline.weight(.bold))
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.center)
-                        .frame(width: UIScreen.main.bounds.width*5/10, height: UIScreen.main.bounds.width*1/10)
-                        .background(Color.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 5.0))
-                    
-                    Spacer()
-                    
-                    Button("Delete") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                    }
-                    .font(.subheadline.weight(.bold))
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.center)
-                        .frame(width: UIScreen.main.bounds.width*5/10, height: UIScreen.main.bounds.width*1/10)
-                        .background(Color.gray)
-                        .clipShape(RoundedRectangle(cornerRadius: 30.0))
-                    Spacer()
-                }
-                Spacer()
-            }
-        }
-    }
-}
-
-struct Notification: View {
-    @Binding var currentDate:Date
-    var body: some View {
-        ZStack{
-            skyBlue.edgesIgnoringSafeArea([.top])
-            VStack{
-                HStack{
-                    Text("Notification")
-                        .font(.largeTitle)
-                        .fontWeight(.heavy)
-                        .foregroundColor(Color.white)
-                        .padding(.leading)
-                    Spacer()
-                    Button("+"){} .padding(.trailing).foregroundColor(Color.black).buttonBorderShape(ButtonBorderShape.roundedRectangle)
-                        .frame(width: UIScreen.main.bounds.width*1/8, height: UIScreen.main.bounds.width*1/8)
-                        .background(Color.gray.edgesIgnoringSafeArea([]))
-                        
-                    Button("-"){} .padding().foregroundColor(Color.black).buttonBorderShape(ButtonBorderShape.roundedRectangle)
-                        .frame(width: UIScreen.main.bounds.width*1/8, height: UIScreen.main.bounds.width*1/8)
-                        .background(Color.gray.edgesIgnoringSafeArea([]))
-
-                }
-                Spacer()
-                List {
-                        HStack{
-                            DatePicker("",
-                                       selection: $currentDate,displayedComponents: .hourAndMinute)
-                                .labelsHidden()
-                                .frame(width: 150, height: 80, alignment: .leading)
-                                .clipped()
-                            Spacer()
-                            Toggle(isOn: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Is On@*/.constant(true)/*@END_MENU_TOKEN@*/) {
-                               
-                            }
-                        }
-                    HStack{
-                        DatePicker("",
-                                   selection: $currentDate,displayedComponents: .hourAndMinute)
-                            .labelsHidden()
-                            .frame(width: 150, height: 80, alignment: .leading)
-                            .clipped()
-                        Spacer()
-                        Toggle(isOn: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Is On@*/.constant(true)/*@END_MENU_TOKEN@*/) {
-                            
-                        }
-                    }
-                }
-                Spacer()
-            }
-            
-        }
-    }
-}
-
-struct QuickStartGuide: View {
-    var body: some View {
-        ZStack{
-            skyBlue.edgesIgnoringSafeArea([.top])
-            VStack{
-                Text("This place is for information, ideally in list view")
-            }
-        }
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
