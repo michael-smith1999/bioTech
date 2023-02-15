@@ -76,7 +76,8 @@ struct Reading: Identifiable {
 struct MainMenu: View {
     @Binding var tabSelection: Int
     var motion = CMMotionManager()
-    var yawDeg:Double = 0
+    let conVal = 180/Double.pi
+    @State var tilt:Double = 0.0
     var body: some View {
         ZStack{
             /*
@@ -97,7 +98,6 @@ struct MainMenu: View {
                 Button(action: {
                     print("Pressed!")
                     Measure()
-                    print(yawDeg)
                 }){
                     Text("Start Measurement")
                         .font(.largeTitle)
@@ -125,13 +125,14 @@ struct MainMenu: View {
     }
     
     func Measure() {
-        if motion.isDeviceMotionAvailable {
-            motion.deviceMotionUpdateInterval = 0.0000001
-            motion.startDeviceMotionUpdates(
-                using: CMAttitudeReferenceFrame.xArbitraryZVertical,
+        if self.motion.isDeviceMotionAvailable {
+            self.motion.deviceMotionUpdateInterval = 0.0000001
+            self.motion.startDeviceMotionUpdates(
+                using: .xMagneticNorthZVertical,
                 to: OperationQueue.current!) {(data, error) in
                     if let trueData = data{
-                        self.yawDeg = trueData.attitude.yaw
+                        self.tilt = 85 - abs(trueData.attitude.pitch * self.conVal)
+                        //Double(Int(10*(90-abs(trueData.attitude.yaw*self.conVal))))/10
                     }
                 }
         }
