@@ -75,8 +75,8 @@ struct Reading: Identifiable {
 
 struct MainMenu: View {
     @Binding var tabSelection: Int
-    let motion = CMMotionManager()
-    
+    var motion = CMMotionManager()
+    var yawDeg:Double = 0
     var body: some View {
         ZStack{
             /*
@@ -96,10 +96,8 @@ struct MainMenu: View {
                 
                 Button(action: {
                     print("Pressed!")
-                    motion.startGyroUpdates()
-                    let roll = motion.gyroData
-                    motion.stopGyroUpdates()
-                    print(roll as Any)
+                    Measure()
+                    print(yawDeg)
                 }){
                     Text("Start Measurement")
                         .font(.largeTitle)
@@ -125,7 +123,22 @@ struct MainMenu: View {
         }
         
     }
+    
+    func Measure() {
+        if motion.isDeviceMotionAvailable {
+            motion.deviceMotionUpdateInterval = 0.0000001
+            motion.startDeviceMotionUpdates(
+                using: CMAttitudeReferenceFrame.xArbitraryZVertical,
+                to: OperationQueue.current!) {(data, error) in
+                    if let trueData = data{
+                        self.yawDeg = trueData.attitude.yaw
+                    }
+                }
+        }
+    }
 }
+
+
 
 struct Measurement: View {
     @Binding var currentDate:Date
