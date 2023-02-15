@@ -25,6 +25,8 @@ let skyBlue = Color(red: 0.4627, green: 0.8392, blue: 1.0)
 let lightGrey = Color(red: 0.8667, green: 0.8667, blue: 0.8667)
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var tilts: FetchedResults<Tilt>
     
 
     @State private var readings =        [
@@ -74,10 +76,12 @@ struct Reading: Identifiable {
 }
 
 struct MainMenu: View {
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var tilts: FetchedResults<Tilt>
     @Binding var tabSelection: Int
     var motion = CMMotionManager()
     let conVal = 180/Double.pi
-    @State var tilt:Double = 0.0
+    @State var pelvicTilt:Double = 0.0
     var body: some View {
         ZStack{
             /*
@@ -98,6 +102,10 @@ struct MainMenu: View {
                 Button(action: {
                     print("Pressed!")
                     Measure()
+                    let tilt = Tilt(context: moc)
+                    tilt.pitch = pelvicTilt
+                    
+                    try? moc.save()
                 }){
                     Text("Start Measurement")
                         .font(.largeTitle)
@@ -129,9 +137,9 @@ struct MainMenu: View {
             self.motion.deviceMotionUpdateInterval = 0.0000001
             self.motion.startDeviceMotionUpdates(
                 using: .xMagneticNorthZVertical,
-                to: OperationQueue.current!) {(data, error) in
+                to: .main) {(data, error) in
                     if let trueData = data{
-                        self.tilt = 85 - abs(trueData.attitude.pitch * self.conVal)
+                        self.pelvicTilt = 85 - abs(trueData.attitude.pitch * self.conVal)
                         //Double(Int(10*(90-abs(trueData.attitude.yaw*self.conVal))))/10
                     }
                 }

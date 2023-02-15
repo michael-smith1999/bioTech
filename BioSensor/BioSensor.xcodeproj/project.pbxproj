@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		366F3F65299D5693000EB18D /* PelvicData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 366F3F63299D5693000EB18D /* PelvicData.xcdatamodeld */; };
+		366F3F68299D5E4C000EB18D /* BioSensor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 366F3F66299D5E4C000EB18D /* BioSensor.xcdatamodeld */; };
+		366F3F6A299D5EB0000EB18D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F3F69299D5EB0000EB18D /* DataController.swift */; };
 		9096D906297C29580018DF54 /* BioSensorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9096D905297C29580018DF54 /* BioSensorApp.swift */; };
 		9096D908297C29580018DF54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9096D907297C29580018DF54 /* ContentView.swift */; };
 		9096D90A297C295A0018DF54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9096D909297C295A0018DF54 /* Assets.xcassets */; };
@@ -35,7 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		366F3F64299D5693000EB18D /* PelvicData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PelvicData.xcdatamodel; sourceTree = "<group>"; };
+		366F3F67299D5E4C000EB18D /* BioSensor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BioSensor.xcdatamodel; sourceTree = "<group>"; };
+		366F3F69299D5EB0000EB18D /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		9096D902297C29580018DF54 /* BioSensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BioSensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9096D905297C29580018DF54 /* BioSensorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioSensorApp.swift; sourceTree = "<group>"; };
 		9096D907297C29580018DF54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,7 +79,6 @@
 		9096D8F9297C29580018DF54 = {
 			isa = PBXGroup;
 			children = (
-				366F3F63299D5693000EB18D /* PelvicData.xcdatamodeld */,
 				9096D904297C29580018DF54 /* BioSensor */,
 				9096D916297C295A0018DF54 /* BioSensorTests */,
 				9096D920297C295A0018DF54 /* BioSensorUITests */,
@@ -102,6 +103,8 @@
 				9096D907297C29580018DF54 /* ContentView.swift */,
 				9096D909297C295A0018DF54 /* Assets.xcassets */,
 				9096D90B297C295A0018DF54 /* BioSensor.entitlements */,
+				366F3F66299D5E4C000EB18D /* BioSensor.xcdatamodeld */,
+				366F3F69299D5EB0000EB18D /* DataController.swift */,
 				9096D90C297C295A0018DF54 /* Preview Content */,
 			);
 			path = BioSensor;
@@ -262,7 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				366F3F65299D5693000EB18D /* PelvicData.xcdatamodeld in Sources */,
+				366F3F68299D5E4C000EB18D /* BioSensor.xcdatamodeld in Sources */,
+				366F3F6A299D5EB0000EB18D /* DataController.swift in Sources */,
 				9096D908297C29580018DF54 /* ContentView.swift in Sources */,
 				9096D906297C29580018DF54 /* BioSensorApp.swift in Sources */,
 			);
@@ -612,13 +616,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		366F3F63299D5693000EB18D /* PelvicData.xcdatamodeld */ = {
+		366F3F66299D5E4C000EB18D /* BioSensor.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				366F3F64299D5693000EB18D /* PelvicData.xcdatamodel */,
+				366F3F67299D5E4C000EB18D /* BioSensor.xcdatamodel */,
 			);
-			currentVersion = 366F3F64299D5693000EB18D /* PelvicData.xcdatamodel */;
-			path = PelvicData.xcdatamodeld;
+			currentVersion = 366F3F67299D5E4C000EB18D /* BioSensor.xcdatamodel */;
+			path = BioSensor.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
